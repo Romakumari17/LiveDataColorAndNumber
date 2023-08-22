@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
@@ -28,7 +29,7 @@ class FragmentColor : Fragment() {
     lateinit var liveData: ViewModel
     lateinit var binding: FragmentColorBinding
     lateinit var mainActivity: MainActivity
-    lateinit var number: Number
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,17 +68,15 @@ class FragmentColor : Fragment() {
             }
             liveData.number.observe(mainActivity){
                 System.out.print("in observe method $it")
-               when(it){
-                   4->
+                binding.numberfragment.setText(it.toString())
 
-                       binding.numberfragment.setText(number.toInt())
-                         number+=1
-                         
-
-               }
 
             }
-
+            binding.btnResetfragment.setOnClickListener {
+               var Number=0
+                binding.numberfragment.setText(Number.toString())
+                Toast.makeText(mainActivity, "Reset", Toast.LENGTH_SHORT).show()
+            }
 
         }
 

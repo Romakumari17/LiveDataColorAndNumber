@@ -38,23 +38,17 @@
         />
 
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Change_No"
-        android:id="@+id/tvChangeno"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/Minus"
+        android:id="@+id/btnminus"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toEndOf="@id/btnpurple"
         app:layout_constraintTop_toBottomOf="@id/btnpurple"
-        android:textSize="40sp"
-        />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/add_number"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/tvChangeno"
-        app:layout_constraintTop_toBottomOf="@id/btnpurple"
         />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +56,7 @@
         android:backgroundTint="@color/black"
         android:id="@+id/btnAdd"
         app:layout_constraintTop_toBottomOf="@id/btngreen"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnpink"
         />
 
 
@@ -71,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/fragmentcolor"
-        app:layout_constraintTop_toBottomOf="@id/tvChangeno"
+        app:layout_constraintTop_toBottomOf="@id/btnAdd"
         app:layout_constraintBottom_toBottomOf="parent"
         android:name="com.romakumari.livedatacolorandnumber.FragmentColor"
         />

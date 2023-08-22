@@ -7,8 +7,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.romakumari.livedatacolorandnumber.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    lateinit var binding:ActivityMainBinding
     lateinit var livedata: ViewModel
+    var number = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +26,13 @@ class MainActivity : AppCompatActivity() {
             livedata.Color.value=3
         }
         binding.btnAdd.setOnClickListener {
-            livedata.number.value=4
+            number++
+            livedata.number.value=number
         }
+        binding.btnminus.setOnClickListener {
+            number--
+            livedata.number.value=number
+        }
+
     }
 }

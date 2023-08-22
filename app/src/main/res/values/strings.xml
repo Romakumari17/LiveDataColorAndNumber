@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LiveDataColorAndNumber</string>
+    <string name="Red">Red</string>
+    <string name="Blue">Blue\n</string>
+    <string name="Green">Green</string>
+    <string name="Change_No">Change No:</string>
+    <string name="add_number">Add number</string>
+    <string name="Reset">Reset</string>
+    <string name="purple">Purple</string>
+    <string name="Pink">Pink</string>
+    <string name="Add">Add</string>
+</resources>

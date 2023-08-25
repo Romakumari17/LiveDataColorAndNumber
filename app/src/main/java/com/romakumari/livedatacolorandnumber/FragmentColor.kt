@@ -53,7 +53,7 @@ class FragmentColor : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         liveData = ViewModelProvider(mainActivity)[ViewModel::class.java]
-        liveData.Color.observe(mainActivity){
+        liveData.color.observe(mainActivity){
         System.out.print("in observe method $it")
             when(it){
                 1->
@@ -72,11 +72,18 @@ class FragmentColor : Fragment() {
 
 
             }
-            binding.btnResetfragment.setOnClickListener {
+                binding.btnResetfragment.setOnClickListener {
                var Number=0
                 binding.numberfragment.setText(Number.toString())
+                    liveData.reset.value = Number
                 Toast.makeText(mainActivity, "Reset", Toast.LENGTH_SHORT).show()
             }
+
+
+
+
+
+
 
         }
 

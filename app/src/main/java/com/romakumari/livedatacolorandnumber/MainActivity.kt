@@ -17,22 +17,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         livedata=ViewModelProvider(this)[ViewModel::class.java]
         binding.btnpurple.setOnClickListener {
-            livedata.Color.value=1
+            livedata.color.value=1
         }
         binding.btnpink.setOnClickListener {
-            livedata.Color.value=2
+            livedata.color.value=2
         }
         binding.btngreen.setOnClickListener {
-            livedata.Color.value=3
+            livedata.color.value=3
         }
         binding.btnAdd.setOnClickListener {
             number++
+            binding.tvtext.setText(number.toString())
             livedata.number.value=number
         }
         binding.btnminus.setOnClickListener {
             number--
             livedata.number.value=number
+            binding.tvtext.setText(number.toString())
         }
+
+      livedata.reset.observe(this){
+          binding.tvtext.setText(it.toString())
+      }
 
     }
 }
